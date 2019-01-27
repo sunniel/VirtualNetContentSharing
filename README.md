@@ -107,7 +107,7 @@ sim-time-limit = 10000s
 
 ## Experiment results
 
-Detailed experiment results can be found in the Experiment Results folder.
+Detailed experiment results can be found in the [Experiment Results folder](https://github.com/sunniel/VirtualNetContentSharing/tree/master/Experiment%20Results).
 
 ## Simulation environment and 3rd-party dependency: 
 
