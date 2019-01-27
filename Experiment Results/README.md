@@ -5,6 +5,7 @@ The first experiment evaluates the number of hops per routing as a function of t
 
 | Parameters                     | Values    |
 |--------------------------------|-----------|
+| Simulation time                | 5000s     |
 | CAN overlay size               | 100 nodes |
 | Chord                          | 100 nodes |
 | Node dynamics cycle            | 10s       |
@@ -28,6 +29,25 @@ Figure 1. Number of hops of routing versus number of objects without Address bot
 Figure 2. Number of hops of routing versus number of objects with Address bot dynamics
 
 ## 2. Perceived Content Load Delay
+
+Configurations are listed in the following table.
+
+| Parameters                     | Values    |
+|--------------------------------|-----------|
+| Simulation time                | 5000s     |
+| CAN overlay size               | 100 nodes |
+| Chord                          | 100 nodes |
+| Node dynamics cycle            | 10s       |
+| Node join rate                 | 0         |
+| Node departure rate            | 0         |
+| Node maintenance   cycle       | 4s        |
+| Client content   refresh cycle | 10s       |
+| Client movement   rate         | 10s       |
+| Client movement   speed        | 200000m/s |
+| Packet delay (RTT)             | 100ms     |
+| Node bandwidth                 | 10Mbps    |
+| Average object size            | 4.5MB     |
+| MTU                            | 1518B     |
 
 ![Number of hops of routing versus number of objects without Address bot dynamics!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Experiment%20Results/Perceived%20Content%20Retrieval%20Delay%20without%20Churn.png)  
 Figure 3. Content Retrieval Time versus number of objects without Address bot dynamics
