@@ -36,7 +36,7 @@ To simplify simulation, logical computers are not modeled in the simulation. Ins
 
 Moreover, a random walk algorithm is employed to generate the path for client movement, which is in the client component. Particularly, a special client variant, called TrailCtreator, stores the generated movement trails into a CSV file (under /simulations path) so that the same trail can be re-used in different tests to reduce the test result difference caused by experiment settings, especially in the load test. The following image illustrates a random walk for 10000 simulation cycles (i.e., 10000s).
 
-![Simulation Overiew!](/overlay.png)
+![Simulation Overiew!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Overlay.png)
 
 ## Experiment results
 
