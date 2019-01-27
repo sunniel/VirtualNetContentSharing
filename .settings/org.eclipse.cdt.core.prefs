@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/LC_ALL/delimiter=;
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/LC_ALL/operation=append
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/LC_ALL/value=en_US.UTF-8
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/PATH/delimiter=;
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/PATH/operation=replace
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/PATH/value=C\:\\Workspaces\\OMNeT++\\omnetpp-5.4\\bin;C\:\\Workspaces\\OMNeT++\\omnetpp-5.4\\tools\\win64\\mingw64\\bin;C\:\\Workspaces\\OMNeT++\\omnetpp-5.4\\tools\\win64\\usr\\bin;C\:/Workspaces/OMNeT++/omnetpp-5.4/ide/jre/bin/server;C\:/Workspaces/OMNeT++/omnetpp-5.4/ide/jre/bin;C\:/Workspaces/OMNeT++/omnetpp-5.4/ide/jre/lib/amd64;C\:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C\:\\Python27\\;C\:\\Python27\\Scripts;C\:\\ProgramData\\Oracle\\Java\\javapath;C\:\\Windows\\system32;C\:\\Windows;
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/append=true
+environment/project/org.omnetpp.cdt.gnu.config.debug.116335427/appendContributed=true
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/LC_ALL/delimiter=;
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/LC_ALL/operation=append
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/LC_ALL/value=en_US.UTF-8
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/PATH/delimiter=;
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/PATH/operation=replace
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/PATH/value=C\:\\Workspaces\\OMNeT++\\omnetpp-5.4\\bin;C\:\\Workspaces\\OMNeT++\\omnetpp-5.4\\tools\\win64\\mingw64\\bin;C\:\\Workspaces\\OMNeT++\\omnetpp-5.4\\tools\\win64\\usr\\bin;C\:/Workspaces/OMNeT++/omnetpp-5.4/ide/jre/bin/server;C\:/Workspaces/OMNeT++/omnetpp-5.4/ide/jre/bin;C\:/Workspaces/OMNeT++/omnetpp-5.4/ide/jre/lib/amd64;C\:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C\:\\Python27\\;C\:\\Python27\\Scripts;C\:\\ProgramData\\Oracle\\Java\\javapath;C\:\\Windows\\system32;C\:\\Windows;
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/append=true
+environment/project/org.omnetpp.cdt.gnu.config.release.1732110296/appendContributed=true
