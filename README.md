@@ -10,9 +10,9 @@ Object geographical locations -> CAN overlay -> Chord host network addresses -> 
 ## Simulation Components
 
 1. **Location Mapping Service**, i.e., the CAN overlay:
-	1) maintains the mapping between object geographical locations and the chord host network addresses;
-	2) queries the Chord overlay for mapping update due to chord overlay node dynamics;
-	3) virtual world content inventory of each virtual world region.
+	1. maintains the mapping between object geographical locations and the chord host network addresses;
+	2. queries the Chord overlay for mapping update due to chord overlay node dynamics;
+	3. virtual world content inventory of each virtual world region.
 	
 2. **Object Resource Lookup Service**, i.e., the Chord overlay, which maintains the mapping between logical computer ID and the network address of logical computer nodes;
 
@@ -34,7 +34,9 @@ To simplify simulation, logical computers are not modeled in the simulation. Ins
 
 ## Trail Generation
 
-Moreover, a random walk algorithm is employed to generate the path for client movement, which is in the client component. Particularly, a special client variant, called TrailCtreator, stores the generated movement trails into a CSV file (under /simulations path) so that the same trail can be re-used in different tests to reduce the test result difference caused by experiment settings, especially in the load test.
+Moreover, a random walk algorithm is employed to generate the path for client movement, which is in the client component. Particularly, a special client variant, called TrailCtreator, stores the generated movement trails into a CSV file (under /simulations path) so that the same trail can be re-used in different tests to reduce the test result difference caused by experiment settings, especially in the load test. The following image illustrates a random walk for 10000 simulation cycles (i.e., 10000s).
+
+![Simulation Overiew!](/overlay.png)
 
 ## Experiment results
 
@@ -49,10 +51,9 @@ Simulation environment and 3rd-party dependency:
 3. JSON for Modern C++ (https://github.com/nlohmann/json)
 
 # References:
-
-[1] Shen, B., Guo, J., Li., L. X.: "Cost optimization in persistent virtual world design"; *Information Technology and Management*, 19, 3 (2017), 108-114.
-[2] Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., Balakrishnan, H. "Chord: A scalable peer-to-peer lookup service for internet applications"; *Proc. SIGCOMM '01*, ACM, New York (2001), 149-160.
-[3] Ratnasamy, S., Francis, P., Handley, M., Karp, R., Shenker, S.: "A scalable content-addressable network"; *Proc. SIGCOMM '01*, ACM, New York (2001), 161-172.
+[1] Shen, B., Guo, J., Li., L. X.: "Cost optimization in persistent virtual world design"; *Information Technology and Management*, 19, 3 (2017), 108-114.  
+[2] Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., Balakrishnan, H. "Chord: A scalable peer-to-peer lookup service for internet applications"; *Proc. SIGCOMM '01*, ACM, New York (2001), 149-160.  
+[3] Ratnasamy, S., Francis, P., Handley, M., Karp, R., Shenker, S.: "A scalable content-addressable network"; *Proc. SIGCOMM '01*, ACM, New York (2001), 161-172.  
 
 ---
 
