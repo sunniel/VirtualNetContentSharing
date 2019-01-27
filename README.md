@@ -34,15 +34,82 @@ To simplify simulation, logical computers are not modeled in the simulation. Ins
 
 ## Trail Generation
 
-Moreover, a random walk algorithm is employed to generate the path for client movement, which is in the client component. Particularly, a special client variant, called TrailCtreator, stores the generated movement trails into a CSV file (under /simulations path) so that the same trail can be re-used in different tests to reduce the test result difference caused by experiment settings, especially in the load test. The following image illustrates a random walk for 10000 simulation cycles (i.e., 10000s).
+Moreover, a random walk algorithm is employed to generate the path for client movement, which is in the client component. Particularly, a special client variant, called TrailCtreator, stores the generated movement trails into a CSV file (under /simulations path) so that the same trail can be re-used in different tests to reduce the test result difference caused by experiment settings, especially in the load test. 
+
+The following image illustrates a random walk for 10000 simulation cycles (i.e., 10000s). The red flag represents the virtual objects distributed on the map. The solid line represents the trail of client movement. The dashed circle represents the content discovery range, while the solid circle represents the client perception range.
 
 ![Simulation Overiew!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Overlay.png)
+
+## Experiments
+
+Different test cases can be switched in the /src/ctrl/ClientCtr.ned file which contains multiple @class annotations. Comment out all but the one targeted for test, instructed as follows.
+
+1. Communication overhead test: The number of communication hops in retrieving all the virtual objects are counted in a content retrieval cycle, tested with and without network churn (i.e., set all departure/arrival rate to zero).  
+
+	1. Client: implement the improved content retrieval strategy.
+	2. BasicClient: implement the basic content retrieval strategy.
+	
+2. Perceived content load latency test: The time of content download is recorded from the start of a content retrieval cycle to the end of the last object downloaded:
+
+	1. ClientDelayTest: implement the improved content retrieval strategy.
+	2. BasicClientDelayTest: implement the basic content retrieval strategy.
+	3. BasicClientSortDelayTest: implement the basic content retrieval strategy, but contents are retrieved in the order of their distance to the client position.
+	
+3. Node load test: The quantified load of CAN nodes are calculated for each specified sampling cycle.
+
+	1. ClientLoadTest: implement the improved content retrieval strategy with load cache management
+	2. ClientLoadTestNoCache: implement the improved content retrieval strategy without local cache for retrieved objects
+
+## Simulation Configurations
+The follows configurations may be changed in simulations
+
+\# Number of virtual objects distributed on the map  
+**.contentDistributor.content_num = 500  
+
+\# Departure and arrival rate of Chord nodes and CAN nodes  
+**.churnGenerator.depart_chord_rate = 0.1  
+**.churnGenerator.depart_can_rate = 0.1  
+**.churnGenerator.arrival_chord_rate = 0.1  
+**.churnGenerator.arrival_can_rate = 0.1  
+
+\# Average size of object files to download: 5898262B = 4.5MB  
+**.chord[*].ctrl.object_size = 5898262B  
+
+\# Cycle of content retrieval  
+**.client.ctrl.load_cycle = 10000ms  
+
+\#  Cycle of client position change  
+**.client.ctrl.walk_cycle = 10000ms  
+
+\# Distance of each consecutive walk steps (*walk_distance = N \* steps, where step = speed \* walk_cycle*)  
+**.client.ctrl.walk_distance = 6000000  
+
+\# Client walk speed  
+**.client.ctrl.speed = 200000  
+
+\# Content retrieval timeout  
+**.client.ctrl.load_timeout_length = 9500ms  
+
+\# Whether the client movement trail is read from a csv file (true) or auto-generated (false)
+**.client.ctrl.trail_from_file = true  
+
+\# Chord node maintenance cycle  
+**.chord[*].ctrl.maintain_cycle = 4000ms  
+
+\# CAN node maintenance cycle
+**.can[*].ctrl.maintain_cycle = 4000ms  
+
+## load test sampling cycle  
+**.globalStatistics.sample_cycle = 100s  
+
+\# length of simulation
+sim-time-limit = 10000s
 
 ## Experiment results
 
 Detailed experiment results can be found in the Experiment Results folder.
 
-Simulation environment and 3rd-party dependency: 
+## Simulation environment and 3rd-party dependency: 
 
 1. OMNet++ 5.4 or later (supporting c++ 11)
 
