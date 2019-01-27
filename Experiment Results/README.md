@@ -1,7 +1,7 @@
 # Experiment Results
 
 ## 1. Communication Overhead  
-The first experiment evaluates the number of hops per routing as a function of the number of objects. In the experiment, the number of objects in a virtual world is scaled from 100 to 500, and randomly distributed on the map. Though, only the objects located within the range of a region are retrieved, increasing the total number of objects also proportionally changes the number of objects within a region with high probability. Configurations are listed in the following table.
+The first experiment evaluates the number of hops per routing as a function of the number of objects. In the experiment, the number of objects in a virtual world is scaled from 100 to 500, and randomly distributed on the map. Though, only the objects located within the range of a region are retrieved, increasing the total number of objects also proportionally changes the number of objects within a region with high probability. The configurations are listed in the following table.
 
 | Parameters                     | Values    |
 |--------------------------------|-----------|
@@ -20,7 +20,7 @@ The first experiment evaluates the number of hops per routing as a function of t
 | Average object size            | 4.5MB     |
 | MTU                            | 1518B     |
 
-The following figures shows the experiment result. The first figure describes the content retrieval process without addressing bot dynamics, while the second figure describes the process with addressing bot dynamics. It can be found that, the communication overhead increases when addressing bot dynamics is applied, because some cached addressing bots are no longer in charge of the specified objects. Thus, searching over the Chord overlay has to be performed, which increases communication overhead. In both Figures, however, the communication overhead in the improved content retrieval scheme is much lower than that in the basic content retrieval scheme, showing the effectiveness of the proposed strategies. Moreover, the communication cost increases in the improved scheme is also slower than that in the basic content retrieval scheme, meaning that the improved scheme is optimal for virtual world content sharing.
+Figure 1 and Figure 2 shows the experiment result. Figure 1 describes the content retrieval process without addressing bot dynamics, while Figure 2 describes the process with addressing bot dynamics. It can be found that, the communication overhead increases when addressing bot dynamics is applied, because some cached addressing bots are no longer in charge of the specified objects. Thus, searching over the Chord overlay has to be performed, which increases communication overhead. In both Figures, however, the communication overhead in the improved content retrieval scheme is much lower than that in the basic content retrieval scheme, showing the effectiveness of the proposed strategies. Moreover, the communication cost increases in the improved scheme is also slower than that in the basic content retrieval scheme, meaning that the improved scheme is optimal for virtual world content sharing.
 
 ![Number of hops of routing versus number of objects without Address bot dynamics!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Experiment%20Results/Communication%20Overhead%20without%20Churn.png)  
 Figure 1. Number of hops of routing versus number of objects without Address bot dynamics
@@ -30,7 +30,7 @@ Figure 2. Number of hops of routing versus number of objects with Address bot dy
 
 ## 2. Perceived Content Load Delay
 
-Configurations are listed in the following table.
+The second experiment evaluates the user perceived delay of content load. Since virtual objects may contains large multimedia files, in this test, they are downloaded one after another. The experiment contains three models. The proposed model downloads the objects follows the sequence of proximate-based content discovery. The basic model follows the sequence of contents listed in the cross-region content inventory. Moreover, a third model is also compared, which calculates the distance of each object on the inventory to the client position and downloads the objects in the ascending order of this geographical distance. The configurations are listed in the following table.
 
 | Parameters                     | Values    |
 |--------------------------------|-----------|
@@ -49,6 +49,8 @@ Configurations are listed in the following table.
 | Average object size            | 4.5MB     |
 | MTU                            | 1518B     |
 
+Figure 3 and Figure 4 shows the experiment result. Figure 3 describes the content retrieval process without addressing bot dynamics, while Figure 4 describes the process with addressing bot dynamics. It is obvious that users can perceive less content retrieval delay in the proximate-based content download strategy than in the inventory-based stragtegy (i.e., the basic model), because, in  the former strategy, more objects within the user perception range can be retrieved and loaded to the screen first, reducing the time of waiting in play. In this experiment, the proposed content retrieval approach shows the similar  performance to the third model (i.e., the augmented basic approach with distance-based content retrieval). To this point, it seems that the third model is simpler than the proposed model. However, the last experiment shows that the basic model will generate more communication overhead than the proposed model. Thus, combined the two results, the proposed model is optimal.
+
 ![Number of hops of routing versus number of objects without Address bot dynamics!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Experiment%20Results/Perceived%20Content%20Retrieval%20Delay%20without%20Churn.png)  
 Figure 3. Content Retrieval Time versus number of objects without Address bot dynamics
 
@@ -56,3 +58,9 @@ Figure 3. Content Retrieval Time versus number of objects without Address bot dy
 Figure 4. Content Retrieval Time versus number of objects with Address bot dynamics
 
 ## 3. Load Distribution
+
+![Number of hops of routing versus number of objects without Address bot dynamics!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Experiment%20Results/Perceived%20Content%20Retrieval%20Delay%20without%20Churn.png)  
+Figure 5. Content Retrieval Time versus number of objects without Address bot dynamics
+
+![Number of hops of routing versus number of objects without Address bot dynamics!](https://github.com/sunniel/VirtualNetContentSharing/blob/master/Experiment%20Results/Perceived%20Content%20Retrieval%20Delay%20with%20Churn.png)  
+Figure 6. Content Retrieval Time versus number of objects with Address bot dynamics
